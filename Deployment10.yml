@@ -9,7 +9,7 @@ Deployment:
      cmd:  kubectl get  deployment deployment-name -o yaml >> filename(deployment.yml)
     deployment-delete:
      cmd: kubectl delete deployment deployment-name
-    deployment-create-all-type-pods(and)replicas-also-automatically-see-that
+    deployment-create-all-type-pods(and)replicas-also-automatically-see-that:
      cmd: kubectl get all
     deployment-syntax:
       cmd: 
