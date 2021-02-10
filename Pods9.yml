@@ -21,7 +21,7 @@ Kubernates create documents Commands:
            lables:
             app: application
             tier: server
-        - Spec:
+        - spec:
             containers:
               - name: redis
                 image: redis
