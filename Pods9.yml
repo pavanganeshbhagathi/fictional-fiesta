@@ -1,0 +1,45 @@
+Kubernates create documents Commands:
+  Pods:  
+    pod-creation-(or)-append-to-file:
+      cmd: kubectl run  redis --image=redis  --dry-run=client -o yaml >> filename(pod.yml)
+    pod-edit:
+      cmd : kubectl edit pod podname
+    pod-describe:
+      cmd: kubectl describe  pod pod-name
+    pod-lists:
+      cmd: kubectl get  pods
+    pod-specific-replicaset:
+      cmd: kubectl get  pod pod-name
+    pod-delete:
+      cmd: kubectl delete  pod pod-name
+    pod-file-Syntax:
+      cmd:    
+        - apiVersion: v1
+        - Kind: Pods
+        - metadta:
+           name: application
+           lables:
+            app: application
+            tier: server
+        - Spec:
+            containers:
+              - name: redis
+                image: redis
+    file-exexute-Command:
+      cmd : kubectl apply -f filename
+
+
+  
+             
+       
+    
+       
+     
+             
+          
+   
+    
+ 
+    
+ 
+ 

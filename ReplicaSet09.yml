@@ -1,0 +1,39 @@
+ Replicaset:
+    replicaset-describe:
+      cmd: kubectl describe  replicaset replicaset-name
+    replicaset-lists:
+      cmd: kubectl get  replicasets
+    replicaset-specific-replicaset:
+      cmd: kubectl get  replicaset replicaset-name
+    replicaset-append-to-file:
+     cmd:  kubectl get  replicaset replicaset-name -o yaml >> filename(replicaset.yml)
+    replicaset-scaling(inr or decr)-replica-at-runtime:
+     cmd: kubectl scale replicaset  --replicas=2 replicaset-name
+    replicaset-delete:
+     cmd: kubectl delete replicaset replicaset-name
+    replicaset-syntax:
+      cmd: 
+        - apiVersion: apps/v1
+        - Kind: ReplicaSet
+        - metadata:
+           name: application
+           lables:
+             app: application
+             tier : replicas
+        - spec:
+            replicas: 2
+            selector:
+             matchLabels:
+              tier: end
+            template:
+              metadata:
+                name: application
+                lables:
+                  app: application
+                  tier: end
+            spec:
+              containers: 
+                - name: redis
+                  image: redis
+    file-exexute-Command:
+      cmd: kubectl apply -f filename
