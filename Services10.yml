@@ -1,0 +1,64 @@
+Service:
+
+Deployment:
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+  name: image-processing-deployment
+  labels:
+    tier: backend 
+  spec:
+   replicas: 4
+   selector:
+     matchLabels:
+       tier: backend  
+   template:
+     metadata:
+       name: image-processing-pod
+       labels:
+         tier: backend 
+     spec:
+       containers:
+         - name: mycustom-image-processing
+           image: someorg/mycustom-image-processing
+   
+ 
+ in-deployment-under-spec-we-have-a-selector-then-match-with-service-selector-it-madatory-to-connect:
+ 
+ 
+  apiVersion: v1
+  kind: Service
+  metadata:
+   name: image-processing
+   labels:
+     app: myapp
+  spec:
+    type: LoadBalancer
+    ports:
+      - port: 80
+        targetPort: 8080
+    selector:              
+      tier: backend
+      
+      
+      
+      
+ Commads:
+      
+    service-describe:
+      cmd: kubectl describe service service-name
+    service-lists:
+      cmd: kubectl get  services
+    service-specific-deployment:
+      cmd: kubectl get  service service-name
+    service-append-to-file:
+     cmd:  kubectl get  service service-name -o yaml >> filename(deployment.yml)
+    service-delete:
+     cmd: kubectl delete service service-name
+  
+    file-exexute-Command:
+     cmd: kubectl apply -f filename
+    
+    
+ 

@@ -27,19 +27,4 @@ Kubernates create documents Commands:
                 image: redis
     file-exexute-Command:
       cmd : kubectl apply -f filename
-
-
-  
-             
-       
-    
-       
-     
-             
-          
-   
-    
- 
-    
- 
  
