@@ -3,7 +3,7 @@ Deployment:
       cmd: kubectl describe deployment deployment-name
     deployment-lists:
       cmd: kubectl get  deployments
-    deployment-specific-replicaset:
+    deployment-specific-deployment:
       cmd: kubectl get  deployment deployment-name
     deployment-append-to-file:
      cmd:  kubectl get  deployment deployment-name -o yaml >> filename(deployment.yml)
