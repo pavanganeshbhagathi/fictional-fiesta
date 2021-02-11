@@ -1,6 +1,10 @@
-ConfigMap: to setting enviromental varible the we are going to this one for example mysql
-  actual-url: jdbc:mysql://localhost:3306/pickfresh?allowPublicKeyRetrieval=true&&useSSL=false
-  modified-kubernates-with-enabled-env: jdbc:mysql://${DB_HOST}/${DB_NAME}allowPublicKeyRetrieval=true&&useSSL=false
+ConfigMap: 
+  stmt: 
+    here: to setting enviromental varible please look below for that one of the popular example mysql databaser url configuration
+  actual-url:
+    here:  jdbc:mysql://localhost:3306/pickfresh?allowPublicKeyRetrieval=true&&useSSL=false
+  modified-kubernates-with-enabled-enviromental-varible:
+    here:  jdbc:mysql://${DB_HOST}/${DB_NAME}allowPublicKeyRetrieval=true&&useSSL=false
 
 configMap-Syntax-here:
   cmd: 
