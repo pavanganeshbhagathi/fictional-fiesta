@@ -1,0 +1,18 @@
+ConfigMap: to setting enviromental varible the we are going to this one for example mysql
+  actual-url: jdbc:mysql://localhost:3306/pickfresh?allowPublicKeyRetrieval=true&&useSSL=false
+  modified-kubernates-with-enabled-env: jdbc:mysql://${DB_HOST}/${DB_NAME}allowPublicKeyRetrieval=true&&useSSL=false
+
+configMap-Syntax-here:
+  cmd: 
+    -  apiVersion: v1
+       Kind: ConfigMap
+       metadata:
+         name: db-config
+       data:
+         host: mysql   # DB_HOST
+         name: test    # DB_NAME
+         
+file-exexute-Command:
+  cmd: kubectl apply -f filename
+through-cmd-create-configMap:
+  cmd:  kubectl create configmap configmap-name --from-literal=HOST=mysql  --from-literal=NAME=test
