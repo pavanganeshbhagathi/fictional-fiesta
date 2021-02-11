@@ -53,7 +53,7 @@ Deployment:
     service-specific-deployment:
       cmd: kubectl get  service service-name
     service-append-to-file:
-     cmd:  kubectl get  service service-name -o yaml >> filename(deployment.yml)
+     cmd:  kubectl get  service service-name -o yaml >> filename(service.yml)
     service-delete:
      cmd: kubectl delete service service-name
   

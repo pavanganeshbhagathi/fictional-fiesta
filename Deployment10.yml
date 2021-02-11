@@ -37,3 +37,6 @@ Deployment:
                   image: redis
     file-exexute-Command:
       cmd: kubectl apply -f filename
+    
+    Deployment-service-expose:
+      cmd: kubectl expose deployment deployment-name --type=LoadBalancer --name=my-service  --port=8080 --targetPort=8080
