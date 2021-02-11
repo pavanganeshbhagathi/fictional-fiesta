@@ -12,10 +12,10 @@ Deployment:
    replicas: 4
    selector:
      matchLabels:
-       tier: backend  
+       tier: backend                  # it is madatory to the match the inside of deployment template labels tier at line 20
    template:
      metadata:
-       name: image-processing-pod
+       name: image-processing-pod      # it is madatory to the match the inside of deployment replicas selector at line 13
        labels:
          tier: backend 
      spec:
@@ -39,8 +39,8 @@ Deployment:
       - port: 80
         targetPort: 8080
     selector:              
-      tier: backend
-      
+      tier: backend                # it is madatory to the match the inside of template labels tier at line 20
+       
       
       
       
